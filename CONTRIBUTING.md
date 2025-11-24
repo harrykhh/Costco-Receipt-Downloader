@@ -61,7 +61,7 @@ Feature requests are welcome! Please open an issue with:
 
 1. Clone your fork:
    ```bash
-   git clone https://github.com/your-username/costco-receipt-downloader.git
+   git clone https://github.com/harrykhh/Costco-Receipt-Downloader.git
    cd costco-receipt-downloader
    ```
 
