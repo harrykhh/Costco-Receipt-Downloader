@@ -1,0 +1,28 @@
+{
+  "name": "costco-receipt-downloader",
+  "version": "0.1.0",
+  "description": "Browser extension to download Costco receipts",
+  "scripts": {
+    "build": "npm run build:firefox && npm run build:chrome",
+    "build:firefox": "npm run clean:firefox && cp manifest-firefox.json manifest.json && npm run zip:firefox && rm manifest.json",
+    "build:chrome": "npm run clean:chrome && cp manifest-chrome.json manifest.json && npm run zip:chrome && rm manifest.json",
+    "zip:firefox": "mkdir -p dist && zip -0 dist/costco-receipt-downloader-firefox.xpi manifest.json content.js styles.css",
+    "zip:chrome": "mkdir -p dist && zip -r dist/costco-receipt-downloader-chrome.zip manifest.json content.js styles.css",
+    "clean": "rm -rf dist",
+    "clean:firefox": "rm -f dist/costco-receipt-downloader-firefox.xpi",
+    "clean:chrome": "rm -f dist/costco-receipt-downloader-chrome.zip"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/harrykhh/costco-receipt-downloader.git"
+  },
+  "keywords": [
+    "costco",
+    "receipts",
+    "browser-extension",
+    "firefox",
+    "chrome"
+  ],
+  "author": "Harry Ho",
+  "license": "MIT"
+}

@@ -1,0 +1,66 @@
+#costco-receipt-downloader-root {
+  all: initial;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.costco-receipt-panel {
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.costco-receipt-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.costco-receipt-label {
+  display: block;
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.costco-receipt-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.costco-receipt-button {
+  width: 100%;
+  padding: 12px;
+  background: #0067b8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.costco-receipt-button:hover:not(:disabled) {
+  background: #005a9e;
+}
+
+.costco-receipt-button:disabled {
+  background: #999;
+  cursor: not-allowed;
+}
+
+.costco-receipt-button.success {
+  background: #28a745;
+}
+
+.costco-receipt-button.error {
+  background: #dc3545;
+}

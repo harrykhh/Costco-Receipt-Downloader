@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "Costco Receipt Downloader",
+  "version": "0.1.0",
+  "description": "Download your Costco receipts as JSON",
+  "permissions": [
+    "activeTab",
+    "https://www.costco.com/*",
+    "https://ecom-api.costco.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.costco.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_action": {
+    "default_title": "Download Costco Receipts"
+  }
+}
