@@ -1,19 +1,46 @@
 {
   "manifest_version": 3,
   "name": "Costco Receipt Downloader",
-  "version": "0.1.0",
-  "description": "Download your Costco receipts as JSON",
+  "version": "0.2.0",
+  "description": "Download your Costco receipts as JSON from any country site",
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "downloads"
   ],
   "host_permissions": [
-    "https://www.costco.com/*",
+    "https://*.costco.com/*",
+    "https://*.costco.ca/*",
+    "https://*.costco.com.mx/*",
+    "https://*.costco.com.au/*",
+    "https://*.costco.com.cn/*",
+    "https://*.costco.fr/*",
+    "https://*.costco.is/*",
+    "https://*.costco.co.jp/*",
+    "https://*.costco.co.nz/*",
+    "https://*.costco.co.kr/*",
+    "https://*.costco.es/*",
+    "https://*.costco.se/*",
+    "https://*.costco.com.tw/*",
+    "https://*.costco.co.uk/*",
     "https://ecom-api.costco.com/*"
   ],
   "content_scripts": [
     {
       "matches": [
-        "https://*.costco.com/*"
+        "https://*.costco.com/*",
+        "https://*.costco.ca/*",
+        "https://*.costco.com.mx/*",
+        "https://*.costco.com.au/*",
+        "https://*.costco.com.cn/*",
+        "https://*.costco.fr/*",
+        "https://*.costco.is/*",
+        "https://*.costco.co.jp/*",
+        "https://*.costco.co.nz/*",
+        "https://*.costco.co.kr/*",
+        "https://*.costco.es/*",
+        "https://*.costco.se/*",
+        "https://*.costco.com.tw/*",
+        "https://*.costco.co.uk/*"
       ],
       "js": [
         "content.js"
