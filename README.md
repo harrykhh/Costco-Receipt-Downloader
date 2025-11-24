@@ -154,14 +154,6 @@ The extension downloads receipts in JSON format with the following structure:
 4. Receipt data is fetched and formatted as JSON
 5. The file is downloaded directly to your browser's download folder
 
-## Customization
-
-You can modify the default date range by editing `content.js`:
-
-```javascript
-// Change the default to 5 years instead of 3
-threeYearsAgo.setFullYear(threeYearsAgo.getFullYear() - 5);
-```
 
 ## Troubleshooting
 
