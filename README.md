@@ -50,6 +50,38 @@ The extension adds a small card interface to your Costco Order Status page:
 5. Click "Download Receipts"
 6. Your receipts will be downloaded as `costco-[timestamp].json`
 
+## Receipt Viewer
+
+The repository includes a standalone web viewer ([`viewer/`](viewer/)) for browsing and searching the JSON file you download. It runs entirely in your browser — no build step, no server, and no data ever leaves your machine.
+
+### Running it
+
+**Option 1 — Open the file directly (simplest):**
+
+```bash
+open viewer/index.html
+```
+
+This opens the viewer in your default browser via the `file://` protocol. All parsing and searching happen client-side, so this is all you need.
+
+**Option 2 — Serve it locally (if you prefer `http://`):**
+
+From the repository root:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then visit [http://localhost:8000/viewer/](http://localhost:8000/viewer/) and stop the server with `Ctrl+C` when done. (`npx serve` works too.)
+
+### Using the viewer
+
+1. Click the dropzone (or drag and drop) and select your downloaded `costco-[timestamp].json` file.
+2. The viewer parses the file and shows summary stats (receipt count, net total, instant savings, warehouses visited) plus a list of receipts.
+3. Type in the **search box** to filter receipts in real time — it matches product descriptions, item numbers, warehouse name/city/state/zip, transaction type, dates, totals, and payment methods (e.g. `modelo`, `redwood city`, `refund`). Matches are highlighted.
+4. Click any receipt to expand its line items, taxes, payment tender, and savings.
+5. Click **"Load different file"** to start over with another JSON export.
+
 ## File Structure
 
 ```
@@ -61,6 +93,10 @@ costco-receipt-downloader/
 ├── manifest-chrome.json        # Chrome manifest (Manifest V3)
 ├── content.js                  # Main extension script
 ├── styles.css                  # CSS for script
+├── viewer/                     # Standalone web viewer for the downloaded JSON
+│   ├── index.html              # Viewer page (upload + search UI)
+│   ├── viewer.css              # Viewer styles
+│   └── viewer.js               # Parsing, rendering, and search logic
 ├── package.json                # npm build scripts (optional)
 ├── README.md                   # This file
 ├── CONTRIBUTING.md             # Contribution guidelines
@@ -193,7 +229,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 - [ ] Add support for online order receipts
 - [ ] Export to CSV format
-- [ ] Receipt search and filter functionality
+- [x] Receipt search and filter functionality
 - [ ] Spending analytics dashboard
 - [ ] Multi-language support
 
