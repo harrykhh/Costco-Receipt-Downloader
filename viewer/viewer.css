@@ -1,0 +1,368 @@
+:root {
+  --costco-blue: #0067b8;
+  --costco-blue-dark: #005a9e;
+  --costco-red: #e31837;
+  --text: #1a1a1a;
+  --text-muted: #555;
+  --border: #e0e0e0;
+  --bg: #f4f5f7;
+  --card-bg: #ffffff;
+  --green: #28a745;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.app-header {
+  background: var(--costco-blue);
+  color: #fff;
+  padding: 24px 24px 20px;
+}
+
+.app-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.app-subtitle {
+  margin: 6px 0 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* ---------- Upload view ---------- */
+.upload-view {
+  max-width: 640px;
+  margin: 48px auto;
+  padding: 0 16px;
+}
+
+.dropzone {
+  border: 2px dashed var(--costco-blue);
+  border-radius: 12px;
+  background: var(--card-bg);
+  padding: 48px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.dropzone:hover,
+.dropzone:focus-visible {
+  background: #eef5fb;
+  outline: none;
+}
+
+.dropzone.dragover {
+  background: #e3f0fa;
+  border-color: var(--costco-blue-dark);
+}
+
+.dropzone-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.dropzone-text {
+  font-size: 16px;
+  color: var(--text);
+}
+
+.dropzone-hint {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.dropzone-hint code {
+  background: #f0f0f0;
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+.upload-error {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 6px;
+  background: #fdecee;
+  color: var(--costco-red);
+  font-size: 14px;
+  text-align: center;
+}
+
+/* ---------- Data view ---------- */
+.data-view {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+.toolbar {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  padding: 12px 0;
+  z-index: 5;
+}
+
+.search-wrap {
+  flex: 1 1 320px;
+}
+
+.search-box {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: var(--card-bg);
+}
+
+.search-box:focus {
+  outline: none;
+  border-color: var(--costco-blue);
+  box-shadow: 0 0 0 3px rgba(0, 103, 184, 0.15);
+}
+
+.toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.result-summary {
+  font-size: 13px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.ghost-btn {
+  background: transparent;
+  border: 1px solid var(--costco-blue);
+  color: var(--costco-blue);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.ghost-btn:hover {
+  background: var(--costco-blue);
+  color: #fff;
+}
+
+.summary-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 4px 0 20px;
+}
+
+.stat-card {
+  flex: 1 1 140px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+/* ---------- Receipt cards ---------- */
+.receipts {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.receipt-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.receipt-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.receipt-head:hover {
+  background: #f7fafd;
+}
+
+.receipt-head-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.receipt-warehouse {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.receipt-meta {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.receipt-head-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.receipt-total {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.receipt-total.refund {
+  color: var(--costco-red);
+}
+
+.type-badge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #e8f0fb;
+  color: var(--costco-blue);
+}
+
+.type-badge.refund {
+  background: #fdecee;
+  color: var(--costco-red);
+}
+
+.chevron {
+  transition: transform 0.15s;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.receipt-card.open .chevron {
+  transform: rotate(90deg);
+}
+
+.receipt-body {
+  border-top: 1px solid var(--border);
+  padding: 8px 16px 16px;
+}
+
+.receipt-card:not(.open) .receipt-body {
+  display: none;
+}
+
+.address {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 8px 0 12px;
+}
+
+table.items {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+table.items th {
+  text-align: left;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  padding: 6px 8px;
+}
+
+table.items td {
+  padding: 6px 8px;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: top;
+}
+
+table.items td.num,
+table.items th.num {
+  text-align: right;
+  white-space: nowrap;
+}
+
+tr.item-discount td {
+  color: var(--green);
+}
+
+.item-desc-2 {
+  display: block;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.item-number {
+  font-size: 11px;
+  color: #999;
+}
+
+.receipt-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.receipt-footer .savings {
+  color: var(--green);
+  font-weight: 600;
+}
+
+mark {
+  background: #fff3b0;
+  padding: 0 1px;
+  border-radius: 2px;
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--text-muted);
+  margin-top: 40px;
+  font-size: 15px;
+}

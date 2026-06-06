@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Costco Receipt Viewer</title>
+  <link rel="stylesheet" href="viewer.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1 class="app-title">Costco Receipt Viewer</h1>
+    <p class="app-subtitle">Upload your downloaded receipts JSON to browse and search your purchases.</p>
+  </header>
+
+  <!-- Upload state -->
+  <section id="upload-view" class="upload-view">
+    <div id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="Upload receipts JSON file">
+      <div class="dropzone-icon">📄</div>
+      <div class="dropzone-text">
+        <strong>Click to choose a file</strong> or drag &amp; drop it here
+      </div>
+      <div class="dropzone-hint">Expects the receipts <code>.json</code> exported by the Costco Receipt Downloader.</div>
+      <input id="file-input" type="file" accept="application/json,.json" hidden />
+    </div>
+    <p id="upload-error" class="upload-error" hidden></p>
+  </section>
+
+  <!-- Data state -->
+  <section id="data-view" class="data-view" hidden>
+    <div class="toolbar">
+      <div class="search-wrap">
+        <input
+          id="search-box"
+          class="search-box"
+          type="search"
+          placeholder="Search products, warehouses, dates, totals…"
+          autocomplete="off"
+          aria-label="Search receipts"
+        />
+      </div>
+      <div class="toolbar-actions">
+        <span id="result-summary" class="result-summary"></span>
+        <button id="reset-btn" class="ghost-btn" type="button">Load different file</button>
+      </div>
+    </div>
+
+    <div id="summary-bar" class="summary-bar"></div>
+
+    <div id="receipts" class="receipts"></div>
+    <p id="empty-state" class="empty-state" hidden>No receipts match your search.</p>
+  </section>
+
+  <script src="viewer.js"></script>
+</body>
+</html>
